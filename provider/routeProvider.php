@@ -126,7 +126,7 @@
 		
 		
 		
-    	public function __invoke() {
+    	public function getService() {
     		return $this->activeRoute;
     	}
 	
@@ -140,16 +140,14 @@
 	
 	
 	
-		public function getAllRoutes($method) {
-			$routes = $this->routes[$method];
+		public function getRoutes($method='ALL') {
+			$routes = $this->routes[strtoupper($method)];
 			$result = [];
-			foreach($routes as $route=>$object) {
-				$result[] = $route;
+			foreach($routes as $route) {
+				$result[] = $route->_route;
 			}
 			return $result;
 		}
-	
-	
 	
 	
 		private function checkForHtaccess() {

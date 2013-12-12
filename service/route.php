@@ -8,7 +8,7 @@ class route {
 	use nrns\events;
 	
 	private $method;
-	public $_route, $params = [];
+	public $_route, $params = [], $route;
 	
 	
 	const paramRegEx = "#:([\w.-]+)\+?#";
@@ -62,7 +62,7 @@ class route {
 			unset($matches[0]);
 			
 			$this->setParams($matches);
-			
+			$this->route = $route;
             return true;
         }
 		
