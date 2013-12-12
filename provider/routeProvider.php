@@ -159,7 +159,7 @@
 				
 				$htaccessContent = str_replace("\t", "", 'RewriteEngine On
 
-					RewriteBase '.__SCRIPT__.'
+					RewriteBase '.dirname($_SERVER['PHP_SELF']).'
 
 					# Remove double slashes in whole URL
 					RewriteCond %{REQUEST_URI} ^(.*)//(.*)$
