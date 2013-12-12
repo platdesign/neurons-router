@@ -1,0 +1,27 @@
+{
+  "name": "neurons-router",
+  "version": "0.0.1",
+  "homepage": "https://github.com/platdesign/neurons-router",
+  "authors": [
+    "platdesign"
+  ],
+  "description": "router-module for neurons",
+  "main": "module.php",
+  "keywords": [
+    "neurons",
+    "php",
+    "dependencyinjection"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies":{
+	  "neurons":"*"
+  }
+}
