@@ -23,7 +23,7 @@ class route {
 		$this->_route 	= $route;
 		$this->then 	= $then;
 		$this->params	= (object) [];
-		
+		$this->request 	= nrns::$injection->service('request');
 	}
 	
 	
@@ -68,7 +68,9 @@ class route {
 		
 	}
 	
-	
+	public function redirect($route) {
+		$this->request->redirectRoute($route);
+	}
 	public function __tostring() {
 		return (string) nrns::$injection->service('request')->getRoute();
 	}
