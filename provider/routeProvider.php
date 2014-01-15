@@ -89,12 +89,20 @@
 			$method = $this->request->getMethod();
 			$route 	= $this->request->getRoute();
 			
+			/*
 			if( $all = $this->findRouteObject("ALL", $route) ) {
 				return $all;
 			} elseif($else = $this->findRouteObject($method, $route)) {
 				return $else;
 			}
-			
+			*/
+
+			if($else = $this->findRouteObject($method, $route)) {
+				return $else;
+			} elseif( $all = $this->findRouteObject("ALL", $route) ) {
+				return $all;
+			} 
+
 			return $this->otherwiseRoute;
 		}
 		
